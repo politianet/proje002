@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="30dp"
+    tools:context=".AracOlusturDialogFragment">
+
+    <EditText
+        android:id="@+id/bakim1EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:hint="BAKIM1"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/bakim2EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bakim1EditText"
+        android:hint="BAKIM2"
+        android:inputType="textPersonName"/>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bakim2EditText"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        >
+        <Button
+            android:id="@+id/guncelleBakimInfoButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Güncelle"
+            android:background="@drawable/button_add"
+            android:textColor="#fff"/>
+
+        <Button
+            android:id="@+id/vazgecBakimInfoButton"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_cancel"
+            android:textColor="#fff"
+            android:text="Vazgeç"/>
+    </LinearLayout>
+
+</RelativeLayout>
