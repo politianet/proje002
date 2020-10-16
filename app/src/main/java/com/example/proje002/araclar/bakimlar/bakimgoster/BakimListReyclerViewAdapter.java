@@ -42,7 +42,7 @@ public class BakimListReyclerViewAdapter extends RecyclerView.Adapter<CustomView
         final Bakim bakim = bakimList.get(position);
         holder.bakim1TextView.setText(bakim.getBakim1());
         holder.bakim2TextView.setText(bakim.getBakim2());
-        holder.silBtnImageView.setOnClickListener(new View.OnClickListener() {
+        holder.silBakimImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
@@ -66,7 +66,7 @@ public class BakimListReyclerViewAdapter extends RecyclerView.Adapter<CustomView
                 alertDialog.show();
             }
         });
-        holder.duzenleBtnImageView.setOnClickListener(new View.OnClickListener() {
+        holder.duzenleBakimImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 duzenleBakim(bakim.getId(), listPosition);

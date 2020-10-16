@@ -234,7 +234,7 @@ public class DatabaseSorgulari {
                 bakim = new Bakim(id, bakim1, bakim2);
             }
         } catch (Exception e) {
-            Toast.makeText(context, "Operation failed", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Bakım Getirilemedi", Toast.LENGTH_SHORT).show();
         } finally {
             if (cursor != null)
                 cursor.close();

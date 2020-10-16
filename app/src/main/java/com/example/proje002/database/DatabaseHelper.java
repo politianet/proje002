@@ -52,7 +52,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onOpen(SQLiteDatabase db) {
         super.onOpen(db);
-        //db.execSQL("PRAGMA foreign_keys=ON;");
     }
 
 }

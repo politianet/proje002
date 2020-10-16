@@ -5,6 +5,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.TextView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -34,6 +36,7 @@ public class AracListActivity extends AppCompatActivity implements IAracEkleList
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_arac_list);
         toolbar = findViewById(R.id.toolbar1);
         setSupportActionBar(toolbar);
@@ -59,12 +62,12 @@ public class AracListActivity extends AppCompatActivity implements IAracEkleList
         super.onResume();
     }
 
-    @Override
+   /* @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_main, menu);
         return super.onCreateOptionsMenu(menu);
-    }
+    }*/
 
    /* @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -72,21 +75,21 @@ public class AracListActivity extends AppCompatActivity implements IAracEkleList
         if(item.getItemId()==R.id.action_delete){
 
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-            alertDialogBuilder.setMessage("Are you sure, You wanted to delete all prodis?");
-            alertDialogBuilder.setPositiveButton("Yes",
+            alertDialogBuilder.setMessage("Tüm araçları silmek için emin misin?");
+            alertDialogBuilder.setPositiveButton("Evet",
                     new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface arg0, int arg1) {
-                            boolean isAllDeleted = databaseQueryClass.deleteAllProdi();
+                            boolean isAllDeleted = databaseQueryClass.deleteAllArac();
                             if(isAllDeleted){
-                                prodiList.clear();
-                                prodiListRecyclerViewAdapter.notifyDataSetChanged();
+                                aracList.clear();
+                                aracListRecyclerViewAdapter.notifyDataSetChanged();
                                 viewVisibility();
                             }
                         }
                     });
 
-            alertDialogBuilder.setNegativeButton("No",new DialogInterface.OnClickListener() {
+            alertDialogBuilder.setNegativeButton("Hayır",new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     dialog.dismiss();

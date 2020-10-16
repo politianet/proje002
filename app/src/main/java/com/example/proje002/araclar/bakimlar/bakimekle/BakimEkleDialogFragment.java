@@ -32,7 +32,7 @@ public class BakimEkleDialogFragment extends DialogFragment {
     public static BakimEkleDialogFragment newInstance(int id_Arac, IBakimEkleListener listener){
         idArac = id_Arac;
         String testt = String.valueOf(idArac);
-        Log.d("Bakımların", testt);
+        Log.d("Bakımlar", testt);
         bakimEkleListener = listener;
         BakimEkleDialogFragment bakimEkleDialogFragment = new BakimEkleDialogFragment();
         bakimEkleDialogFragment.setStyle(DialogFragment.STYLE_NORMAL, R.style.CustomDialog);

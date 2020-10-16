@@ -38,7 +38,7 @@ public class BakimListActivity extends AppCompatActivity implements IBakimEkleLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bakim_list);
         Toolbar toolbar = findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
+        setSupportActionBar(toolbar);
         recyclerView = findViewById(R.id.recyclerView);
         bakimListEmptyTextView = findViewById(R.id.emptyListTextView);
         idArac = getIntent().getIntExtra(Config.ARAC_REGISTRATION, 2);
@@ -57,16 +57,10 @@ public class BakimListActivity extends AppCompatActivity implements IBakimEkleLi
     }
 
     private void acBakimEkleDialog() {
-        //StudentCreateDialogFragment studentCreateDialogFragment = StudentCreateDialogFragment.newInstance(idProdi, this);
         BakimEkleDialogFragment bakimEkleDialogFragment = BakimEkleDialogFragment.newInstance(idArac, this);
         bakimEkleDialogFragment.show(getSupportFragmentManager(), Config.CREATE_BAKIM);
     }
 
-    @Override
-    public void onBakimEkle(Bakim bakim) {
-        bakimList.add(bakim);
-        bakimListReyclerViewAdapter.notifyDataSetChanged();
-    }
     /*@Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
@@ -88,19 +82,16 @@ public class BakimListActivity extends AppCompatActivity implements IBakimEkleLi
                                 }
                             }
                         });
-
                 alertDialogBuilder.setNegativeButton("Hayır",new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
                     }
                 });
-
                 AlertDialog alertDialog = alertDialogBuilder.create();
                 alertDialog.show();
                 return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
     */
@@ -111,4 +102,14 @@ public class BakimListActivity extends AppCompatActivity implements IBakimEkleLi
         else
             bakimListEmptyTextView.setVisibility(View.GONE);
     }
+    public void setSupportActionBar(Toolbar toolbar) {
+
+        // gereksiz
+    }
+    @Override
+    public void onBakimEkle(Bakim bakim) {
+        bakimList.add(bakim);
+        bakimListReyclerViewAdapter.notifyDataSetChanged();
+    }
+
 }

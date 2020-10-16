@@ -24,7 +24,7 @@ public class BakimGuncelleDialogFragment extends DialogFragment {
     private Button guncelleBtn;
     private Button vazgecBtn;
     private DatabaseSorgulari databaseSorgulari;
-    private Bakim mbakim;
+    //private Bakim mbakim;
 
     private static IBakimGuncelleListener bakimGuncelleListener;
     private static long bakimId;

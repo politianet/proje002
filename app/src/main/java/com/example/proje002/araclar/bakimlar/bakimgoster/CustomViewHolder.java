@@ -13,14 +13,14 @@ public class CustomViewHolder extends RecyclerView.ViewHolder {
     TextView bakim1TextView;
     TextView bakim2TextView;
 
-    ImageView silBtnImageView;
-    ImageView duzenleBtnImageView;
+    ImageView silBakimImageView;
+    ImageView duzenleBakimImageView;
 
     public CustomViewHolder(@NonNull View itemView){
         super(itemView);
         bakim1TextView = itemView.findViewById(R.id.bakim1TextView);
         bakim2TextView = itemView.findViewById(R.id.bakim2TextView);
-        silBtnImageView = itemView.findViewById(R.id.silImageView);
-        duzenleBtnImageView = itemView.findViewById(R.id.duzenleImageView);
+        silBakimImageView = itemView.findViewById(R.id.silBakimImageView);
+        duzenleBakimImageView = itemView.findViewById(R.id.duzenleBakimImageView);
     }
 }
